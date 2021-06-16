@@ -12,6 +12,9 @@
 
     - name: "Upgrade all packages on servers"
       apt: "upgrade=dist force_apt_get=yes"
+    
+    - name: "Installing Raphf"
+      shell: pecl install raphf
 
     - name: "Adding the extension=raphf.so to /etc/php/7.4/apache2/php.ini"
       lineinfile:
