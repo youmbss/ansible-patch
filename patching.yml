@@ -1,17 +1,17 @@
 --- 
-	- 
-	  become: true
-	  become_user: root
-	  hosts: all
-	  tasks: 
-	    - 
-	      name: "Download the new debian Key"
-	      shell: "wget https://packages.sury.org/php/apt.gpg -O /etc/apt/trusted.gpg.d/php-sury.gpg"
-	    - 
-	      apt: "update_cache=yes force_apt_get=yes cache_valid_time=3600"
-	      name: "Update apt repo and cache on  Debian"
-	    - 
-	      apt: "upgrade=dist force_apt_get=yes"
-	      name: "Upgrade all packages on servers"
+- 
+  become: true
+  become_user: root
+  hosts: all
+  tasks: 
+    - 
+      name: "Download the new debian Key"
+      shell: "wget https://packages.sury.org/php/apt.gpg -O /etc/apt/trusted.gpg.d/php-sury.gpg"
+    - 
+      apt: "update_cache=yes force_apt_get=yes cache_valid_time=3600"
+      name: "Update apt repo and cache on Debian"
+    - 
+      apt: "upgrade=dist force_apt_get=yes"
+      name: "Upgrade all packages on servers"
 
 
